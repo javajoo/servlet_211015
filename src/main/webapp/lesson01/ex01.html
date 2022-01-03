@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get Method</title>
+</head>
+<body>
+	<h1>Get Method</h1>
+	<p>
+		<a href="/servlet/ex03">링크 태그</a>
+	</p>
+	
+	<!-- 1개 파라미터 -->
+	<p>
+		<a href="/servlet/ex03?user_id=marobiana">아이디를 넘깁니다.</a>
+		<!-- ?user_id=marobiana: 쿼리 파라미터 -->
+		<!-- 아이디를 넘깁니다를 누르면 a 주소로 넘어가면 user_id 파라미터를 가져온다. -->
+	</p>
+	
+	<!-- 2개 파라미터 -->
+	<p>
+		<a href="/servlet/ex03?user_id=marobiana&name=boram">아이디와 이름을 넘깁니다.</a>
+		<!-- 첫번재는 ? 로 시작하고 구분자는 &로 해준다. -->
+	</p>
+	
+	<!-- 3개 파라미터 -->
+	<p>
+		<a href="/servlet/ex03?user_id=marobiana&name=boram&age=35">아이디와 이름과 나이를 넘깁니다.</a>
+	</p>
+</body>
+</html>
