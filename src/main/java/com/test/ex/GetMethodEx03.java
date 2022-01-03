@@ -38,7 +38,7 @@ public class GetMethodEx03 extends HttpServlet{
 		
 		// "" 내용쓸때는 \"로 해줘야 한다.
 		
-		
+		out.print("test");
 		
 		
 	}
