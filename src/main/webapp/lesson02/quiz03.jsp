@@ -32,9 +32,9 @@
 			<div class="form-group d-flex">
 				<input type="text" id="height" name="height" class="form-control col-3 mr-2" 
 				placeholder="키를 입력하세요">
-				<span class="mt-3">cm</span>
+				<span class="mt-3"> cm </span>
 				<input type="text" id="weight" name="weight" class="form-control col-3 ml-2 mr-2" placeholder="몸무게를 입력하세요">
-				<span class="mt-3">kg</span>
+				<span class="mt-3"> kg </span>
 				<button type="submit" class="btn btn-info ml-3">계산</button>
 			</div>
 		</form>

@@ -50,8 +50,8 @@
 	<div class="container">
 		<h1>BMI 측정 결과</h1>
 		<div class="display-1">
-		당신은<span class="text-info"><%= result %></span>입니다.</div>
-		<div>BMI 수치 : <%= BMI %></div>
+		당신은<span class="text-info"><%=  result  %></span>입니다.</div>
+		<div>BMI 수치 : <%=  BMI  %></div>
 	</div>
 
 
