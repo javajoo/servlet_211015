@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>quiz04</title>
+<title>배탈의 민족</title>
 <!-- bootstrap  -->
 <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -25,21 +25,15 @@
 </head>
 <body>
 	<div class="container">
-		<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
-			<div class="d-flex">
-				<input type="text" id="number1" name="number1" class="form-control col-2">
-				<select name="operator" class="form-control col-1 ml-2 mr-2">
-				<!-- 특수문자를 서버에 보낼때는 불안정하기 때문에 value로 지정 해주는게 좋다. -->
-					<option value="plus">+</option>
-					<option value="min">-</option>
-					<option value="multiple">*</option>
-					<option value="divide">/</option>
-				</select> 
-				<input type="text" id="number2" name="number2" class="form-control col-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>	
+	<h1>메뉴 검색</h1>
+		<form method="get" action="/lesson02/quiz07_1.jsp">
+			<div class="form-group d-flex">
+				<input type="text" id="menu" name="menu" class="form-control col-5 mr-2" placeholder="메뉴를 선택하세요.">
+				<label><input type="checkbox" name="limit" value="limit" class="mt-3">4점 이하 제외</label>
 			</div>
+			<button type="submit" class="btn btn-success">검색</button>
 		</form>
 	</div>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>quiz04</title>
+<title>길이 변환</title>
 <!-- bootstrap  -->
 <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -25,21 +25,20 @@
 </head>
 <body>
 	<div class="container">
-		<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
-			<div class="d-flex">
-				<input type="text" id="number1" name="number1" class="form-control col-2">
-				<select name="operator" class="form-control col-1 ml-2 mr-2">
-				<!-- 특수문자를 서버에 보낼때는 불안정하기 때문에 value로 지정 해주는게 좋다. -->
-					<option value="plus">+</option>
-					<option value="min">-</option>
-					<option value="multiple">*</option>
-					<option value="divide">/</option>
-				</select> 
-				<input type="text" id="number2" name="number2" class="form-control col-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>	
+		<h1>길이 변환</h1>
+		<form method="post" action="/lesson02/quiz05_1.jsp">
+			<div class="form-group d-flex">
+				<input type="text" class="form-control col-3" name="length">
+				<span class="mt-3 ml-2">cm</span>
 			</div>
+			
+			<label for="in">인치<input type="checkbox" class="mr-2" name="convert" value="in"></label>
+			<label for="yd">야드<input type="checkbox" class="mr-2" name="convert" value="yd"></label>
+			<label for="ft">피트<input type="checkbox" class="mr-2" name="convert" value="ft"></label>
+			<label for="m">미터<input type="checkbox" class="mr-2" name="convert" value="m"></label><br>
+			<button type="submit" class="btn btn-success">변환하기</button>
 		</form>
 	</div>
+
 </body>
 </html>

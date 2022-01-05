@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>quiz04</title>
+<title>장보기 목록</title>
 <!-- bootstrap  -->
 <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -25,21 +26,39 @@
 </head>
 <body>
 	<div class="container">
-		<h1>사칙 연산 계산기</h1>
-		<form method="post" action="/lesson02/quiz04_1.jsp">
-			<div class="d-flex">
-				<input type="text" id="number1" name="number1" class="form-control col-2">
-				<select name="operator" class="form-control col-1 ml-2 mr-2">
-				<!-- 특수문자를 서버에 보낼때는 불안정하기 때문에 value로 지정 해주는게 좋다. -->
-					<option value="plus">+</option>
-					<option value="min">-</option>
-					<option value="multiple">*</option>
-					<option value="divide">/</option>
-				</select> 
-				<input type="text" id="number2" name="number2" class="form-control col-2">
-				<button type="submit" class="btn btn-success ml-2">계산하기</button>	
-			</div>
-		</form>
+	<h1>장보기 목록</h1>
+	
+		
+	<table class="table text-center">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>품목</th>
+			</tr>
+		</thead>
+	<%
+	
+	List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
+	
+	for (int i = 0; i < goodsList.size(); i++) {
+		
+	
+	
+	%>
+	
+		<tbody>
+			<tr>
+			<th><%= i+1 %></th>
+			<td><%= goodsList.get(i) %></td>
+			</tr>
+		
+	<%
+	}
+	%>
+	 	</tbody>
+	</table>	
 	</div>
 </body>
 </html>
