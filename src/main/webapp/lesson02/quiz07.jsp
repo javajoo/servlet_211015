@@ -28,8 +28,8 @@
 	<h1>메뉴 검색</h1>
 		<form method="get" action="/lesson02/quiz07_1.jsp">
 			<div class="form-group d-flex">
-				<input type="text" id="menu" name="menu" class="form-control col-5 mr-2" placeholder="메뉴를 선택하세요.">
-				<label><input type="checkbox" name="limit" value="limit" class="mt-3">4점 이하 제외</label>
+				<input type="text" id="input" name="input" class="form-control col-3 mr-2" placeholder="메뉴를 선택하세요.">
+				<label><input type="checkbox" name="limit" value="limit" class="mt-3" checked>4점 이하 제외</label>
 			</div>
 			<button type="submit" class="btn btn-success">검색</button>
 		</form>
