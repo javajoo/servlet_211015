@@ -150,10 +150,9 @@
 			list.add(map);
 			String all = request.getParameter("전체");
 			String category = request.getParameter("category");
-			boolean isValue = all != null;
 			for (Map<String, String> select : list) {
 
-				if (select.get("category").equals(category)) {
+			/* 	if (select.get("category").equals(category)) { */
 			%>
 
 			<tr>
@@ -163,9 +162,11 @@
 			</tr>
 
 			<%
+			/* } */
 			}
-				}
 			%>
+			
+			
 
 		</tbody>
 	</table>
