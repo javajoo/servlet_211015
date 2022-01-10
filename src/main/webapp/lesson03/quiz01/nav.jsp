@@ -3,10 +3,12 @@
 
 
 
-<nav class="bg-danger">
-	<ul class="nav nav-fill font-weight-bold text-center">
+<nav class="bg-danger d-flex align-items-center">
+	<!-- ul태그 통채를 nav에 d-flex 줘야 한다. -->
+	<!-- nav-fill과 w-100 같이 써야 가로만큼 퍼진다. -->
+	<ul class="nav nav-fill font-weight-bold w-100">
 		<li class="nav-item"><a
-			href="/lesson03/quiz01/template.jsp?category=전체"
+			href="/lesson03/quiz01/template.jsp"
 			class="nav-link nav-font">전체</a></li>
 		<li class="nav-item"><a
 			href="/lesson03/quiz01/template.jsp?category=지상파"

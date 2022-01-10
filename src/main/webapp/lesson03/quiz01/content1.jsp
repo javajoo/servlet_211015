@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
+<!-- 자바임포트도 페이지마다 각자 임포트 해줘야 한다. -->
 <section>
 	<table class="table text-center">
 		<thead>
@@ -149,10 +150,12 @@
 			};
 			list.add(map);
 			String all = request.getParameter("전체");
+			// 전체 : category == null
+			// 카테고리 선택: category 카테고리명 
 			String category = request.getParameter("category");
 			for (Map<String, String> select : list) {
-
-			/* 	if (select.get("category").equals(category)) { */
+				// 전체 : null 이거나 카테고리 선택값이 일치할때 
+				if (select.get("category").equals(category) || category == null) {
 			%>
 
 			<tr>
@@ -162,11 +165,11 @@
 			</tr>
 
 			<%
-			/* } */
+			}
 			}
 			%>
-			
-			
+
+
 
 		</tbody>
 	</table>

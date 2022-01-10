@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>채널 안내</title>
+<title>노래 리스트</title>
 <!-- bootstrap  -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -26,48 +26,64 @@
 
 <style>
 a {
-	color: #fff;
+	font-weight: bold;
+}
+
+/* .box {
+	border-color: green;
+	width: 800px;
+	border-style: solid;
+	height: 200px;
+	padding: 10px;
+}
+ */
+.nav-font {
+	color: #000;
 }
 
 a:hover {
-	color: # fff;
+	color: #000;
+	text-decoration: none;
 }
 
 header {
 	height: 100px;
-	font-size: 70px;
+	font-size: 30px;
+	
 }
+search-bar {width  : 450px;}
 
 nav {
-	height: 80px;
+	height: 50px;
 }
 
-.nav-font {
-	color: white;
-	font-size: 30px;
+.content1 {
+	height: 200px;
 }
-/* section 높이는 지정안해주면 알아서 늘어나거나 줄어들거나 한다. */
-/* section {
-	height: 900px;
-} */
 
+.content2 {
+	height: 400px;
+}
+/* section {height: 600px;} */
 footer {
 	height: 100px;
 }
 </style>
 </head>
 <body>
+
 	<div id="wrap">
-		<!-- 같은 폴더: 상대경로로 해준다. 끝에 / 꼭 해줘야 한다. -->
-		<jsp:include page="header.jsp" />
-		<jsp:include page="nav.jsp" />
-		<jsp:include page="content1.jsp" />
-		<jsp:include page="footer.jsp" />
+		<form method="get" action="/lesson03/quiz02/template.jsp">
+			<!-- /> 공백있으면 안된다!! 에러 뜬다. -->
+			<jsp:include page="header.jsp" />
+			<jsp:include page="nav.jsp" />
+			
+			<jsp:include page="list_content.jsp" />
+			<jsp:include page="footer.jsp" />
+		</form>
 	</div>
 </body>
 </html>
-
-
 
 
 
