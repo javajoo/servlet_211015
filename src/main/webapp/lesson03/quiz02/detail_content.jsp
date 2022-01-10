@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <%@ page import="java.util.*"%>
+
 <%
 // 아티스트 정보 
 
@@ -83,50 +85,41 @@ musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
 %>
 <section>
-	<div>
-		<div class="border border-success p-3 d-flex">
+	<h2>곡 정보</h2>
+	<div class="border border-success p-3">
+		<%
+		String title = request.getParameter("title");
+		int id = Integer.parseInt(request.getParameter("id"));
+		for (Map<String, Object> list : musicList) {
+			if ((int) list.get("id") == id || list.get("title").equals(title)) {
+		%>
+
+		<div class="d-flex">
 			<div class="mr-3">
-				<img src="<%=artistInfo.get("photo")%>" width=150px>
+				<img src="<%=list.get("thumbnail")%>" width=150 height=150>
 			</div>
+
 			<div>
-				<h3>
-					<b><%=artistInfo.get("name")%></b>
-				</h3>
-				<span class="d-block"><%=artistInfo.get("agency")%></span> <span
-					class="d-block"><%=artistInfo.get("debute")%>데뷔</span>
+				<h1><%=musicInfo.get("title")%></h1>
+				<span class="`text-success font-weight-bold d-block mb-3"><%=list.get("singer")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">앨범</span><%=list.get("album")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">재생시간</span><%=list.get("time")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작곡가</span><%=list.get("composer")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작사가</span><%=list.get("lyricist")%></span>
 			</div>
 		</div>
-	</div>
-	<div class="bg-white">
-		<h2 class="mt-2">곡 목록</h2>
 
-		<table class="table text-center font-weight-bold">
-			<thead>
-				<tr>
-					<th>no</th>
-					<th>제목</th>
-					<th>앨범</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<%
-				for (Map<String, Object> list : musicList) {
-				%>
-
-				<tr>
-					<td><%=list.get("id")%></td>
-					<td><a
-						href="/lesson03/quiz02/detail_template.jsp?id=<%=list.get("id")%>"><%=list.get("title")%></a></td>
-					<td><%=list.get("album")%></td>
-				</tr>
-
-				<%
-				}
-				%>
-
-			</tbody>
-		</table>
+		<%
+		}
+		}
+		%>
 
 	</div>
+
+	<p>
+	<h5>가사</h5>
+	<hr>
+	가사 정보 없음
+	</p>
+
 </section>

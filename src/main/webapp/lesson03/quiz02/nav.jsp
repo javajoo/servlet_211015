@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<nav>
-	<ul class="nav">
-		<li class="nav-item"><a href="#" class="nav-link nav-font">멜롱챠트</a></li>
-		<li class="nav-item"><a href="#" class="nav-link nav-font">최신음악</a></li>
-		<li class="nav-item"><a href="#" class="nav-link nav-font">장르음악</a></li>
-		<li class="nav-item"><a href="#" class="nav-link nav-font">멜롱DJ</a></li>
-		<li class="nav-item"><a href="#" class="nav-link nav-font">뮤직어워드</a></li>
+<nav class="d-flex align-items-center">
+	<ul class="nav nav-fill">
+		<li class="nav-item"><a href="#" class="nav-link font-link">멜롱챠트</a>
+		<li class="nav-item"><a href="#" class="nav-link font-link">최신음악</a>
+		<li class="nav-item"><a href="#" class="nav-link font-link">장르음악</a>
+		<li class="nav-item"><a href="#" class="nav-link font-link">멜롱DJ</a>
+		<li class="nav-item"><a href="#" class="nav-link font-link">뮤직어워드</a>
 	</ul>
 </nav>

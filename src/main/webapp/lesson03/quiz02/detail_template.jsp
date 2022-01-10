@@ -136,19 +136,12 @@ footer {
 		<form method="get" action="/lesson03/quiz02/detail_template.jsp">
 			<jsp:include page="header.jsp" />
 			<jsp:include page="nav.jsp" />
-			<jsp:include page="list_content.jsp" />
+			<jsp:include page="detail_content.jsp" />
 			<jsp:include page="footer.jsp" />
 		</form>
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
