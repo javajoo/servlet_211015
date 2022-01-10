@@ -90,22 +90,23 @@ musicList.add(musicInfo);
 		<%
 		String title = request.getParameter("title");
 		int id = Integer.parseInt(request.getParameter("id"));
-		for (Map<String, Object> list : musicList) {
-			if ((int) list.get("id") == id || list.get("title").equals(title)) {
+		for (Map<String, Object> map : musicList) {
+			if ( map.get("title").equals(title) ||  (int) map.get("id") == id) {
+				// (int) map.get("id") == id ||
 		%>
 
 		<div class="d-flex">
 			<div class="mr-3">
-				<img src="<%=list.get("thumbnail")%>" width=150 height=150>
+				<img src="<%=map.get("thumbnail")%>" width=150 height=150>
 			</div>
 
 			<div>
 				<h1><%=musicInfo.get("title")%></h1>
-				<span class="`text-success font-weight-bold d-block mb-3"><%=list.get("singer")%></span>
-				<span class="text-secondary d-block"><span class="mr-5">앨범</span><%=list.get("album")%></span>
-				<span class="text-secondary d-block"><span class="mr-5">재생시간</span><%=list.get("time")%></span>
-				<span class="text-secondary d-block"><span class="mr-5">작곡가</span><%=list.get("composer")%></span>
-				<span class="text-secondary d-block"><span class="mr-5">작사가</span><%=list.get("lyricist")%></span>
+				<span class="text-success font-weight-bold d-block mb-3"><%=map.get("singer")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">앨범</span><%=map.get("album")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">재생시간</span><%=map.get("time")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작곡가</span><%=map.get("composer")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작사가</span><%=map.get("lyricist")%></span>
 			</div>
 		</div>
 
