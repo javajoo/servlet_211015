@@ -51,7 +51,13 @@ footer {
 <body>
 	<!-- 검색, 클릭으로 페이지 넘어갈 수 있도록 2가지 방법으로 만들어줘야 한다. -->
 	<div id="wrap">
+<<<<<<< HEAD
 		<jsp:include page="header.jsp" />
+=======
+		<form method="get" action="/lesson03/quiz02/detail_template.jsp">
+			<jsp:include page="header.jsp" />
+		</form>
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 		<jsp:include page="nav.jsp" />
 		<jsp:include page="list_content.jsp" />
 		<jsp:include page="footer.jsp" />
@@ -61,3 +67,17 @@ footer {
 </html>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b

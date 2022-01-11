@@ -8,8 +8,15 @@ artistInfo.put("name", "아이유");
 artistInfo.put("debute", 2008);
 artistInfo.put("agency", "EDAM엔터테인먼트");
 artistInfo.put("photo", "http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/867/444/81867444_1616662460652_1_600x600.JPG");
+<<<<<<< HEAD
 // 아이유 노래 리스트 
 List<Map<String, Object>> musicList = new ArrayList<>();
+=======
+
+// 아이유 노래 리스트 
+List<Map<String, Object>> musicList = new ArrayList<>();
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 Map<String, Object> musicInfo = new HashMap<>();
 musicInfo.put("id", 1);
 musicInfo.put("title", "팔레트");
@@ -20,6 +27,10 @@ musicInfo.put("time", 217);
 musicInfo.put("composer", "아이유");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 musicInfo = new HashMap<>();
 musicInfo.put("id", 2);
 musicInfo.put("title", "좋은날");
@@ -30,6 +41,10 @@ musicInfo.put("time", 233);
 musicInfo.put("composer", "이민수");
 musicInfo.put("lyricist", "김이나");
 musicList.add(musicInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 musicInfo = new HashMap<>();
 musicInfo.put("id", 3);
 musicInfo.put("title", "밤편지");
@@ -40,6 +55,10 @@ musicInfo.put("time", 253);
 musicInfo.put("composer", "제휘,김희원");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 musicInfo = new HashMap<>();
 musicInfo.put("id", 4);
 musicInfo.put("title", "삐삐");
@@ -51,6 +70,10 @@ musicInfo.put("time", 194);
 musicInfo.put("composer", "이종훈");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 musicInfo = new HashMap<>();
 musicInfo.put("id", 5);
 musicInfo.put("title", "스물셋");
@@ -62,6 +85,10 @@ musicInfo.put("time", 194);
 musicInfo.put("composer", "아이유,이종훈,이채규");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 musicInfo = new HashMap<>();
 musicInfo.put("id", 6);
 musicInfo.put("title", "Blueming");
@@ -90,7 +117,11 @@ musicList.add(musicInfo);
 		</div>
 	</div>
 	<div class="bg-white">
+<<<<<<< HEAD
 		<h2 class="mt-4">곡 목록</h2>
+=======
+		<h2 class="mt-2">곡 목록</h2>
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 
 		<table class="table text-center font-weight-bold">
 			<thead>
@@ -103,6 +134,7 @@ musicList.add(musicInfo);
 			<tbody>
 
 				<%
+<<<<<<< HEAD
 				for (Map<String, Object> map : musicList) {
 				%>
 
@@ -111,6 +143,16 @@ musicList.add(musicInfo);
 					<!-- 나중에 많아지면 제목이 겹칠수 있기 때문에 정확하게 하려면 고유id로 해주는게 좋다. -->
 					<td><a href="/lesson03/quiz02/detail_template.jsp?id=<%=map.get("id")%>"><%=map.get("title")%></a></td>
 					<td><%=map.get("album")%></td>
+=======
+				for (Map<String, Object> list : musicList) {
+				%>
+
+				<tr>
+					<td><%=list.get("id")%></td>
+					<td><a
+						href="/lesson03/quiz02/detail_template.jsp?id=<%=list.get("id")%>"><%=list.get("title")%></a></td>
+					<td><%=list.get("album")%></td>
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 				</tr>
 
 				<%

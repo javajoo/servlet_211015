@@ -28,18 +28,34 @@ header {
 	height: 100px;
 	font-size: 50px;
 }
+<<<<<<< HEAD
 a:hover {
 	text-decoration: none;
 }
 nav {
 	height: 70px;
 }
+=======
+
+a:hover {
+	text-decoration: none;
+}
+
+nav {
+	height: 70px;
+}
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 .font-link {
 	color: black;
 	font-weight: bold;
 	font-size: 20px;
 }
+<<<<<<< HEAD
 .music-info-text {fone-size : 10px; color :gray;}
+=======
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
 footer {
 	height: 100px;
 }
@@ -53,8 +69,21 @@ footer {
 		</form>
 		<jsp:include page="nav.jsp" />
 		<jsp:include page="detail_content.jsp" />
+<<<<<<< HEAD
 		<!-- 상세페이지만 달라지고 나머지는 똑같다. -->
 		<jsp:include page="footer.jsp" />
 	</div>
 </body>
 </html>
+=======
+		<jsp:include page="footer.jsp" />
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+>>>>>>> ff06869a357c635b857e390cb9ac5ae0ab905f8b
