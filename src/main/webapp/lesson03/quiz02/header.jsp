@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-			<header>
-				<div class="form-group  d-flex align-items-center">
-					<!-- 로고는 링크 걸어주는게 좋다. -->
-					<h3><a href="/lesson03/quiz02/template.jsp" class="text-success">Melong</a></h3>
-					<div class="search-bar">
-					<div class=" d-flex align-items-center">
-						<input type="text" name="search" class="form-control">
-						<div><button type="submit" class="btn btn-info" >검색</button></div>
-					</div>
-					</div>
+	pageEncoding="UTF-8"%>
+<header class="d-flex">
+	<div class="col-2 ">
+		<div class=" font-weight-bold text-center">
+			<a href="/lesson03/quiz02/list_template.jsp" class="text-success">Melong</a>
+		</div>
+	</div>
+
+
+	<!-- 해당하는 부분에만 폼태그 걸어주면 된다. 폼태그는 submit으로, name으로 넘기게 해줘야 넘어간다 -->
+	<form method="get" action="/lesson03/quiz02/detail_template.jsp">
+		<div class="col-3">
+			<div class="input-group d-flex align-items-center mt-4">
+				<input type="text" class="form-control" name="search">
+				<div class="input-group-append">
+					<button type="submit" class="form-control btn btn-info">검색</button>
 				</div>
-			</header>
+			</div>
+		</div>
+	</form>
+</header>

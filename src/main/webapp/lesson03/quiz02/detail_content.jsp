@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <%@ page import="java.util.*"%>
+
 <%
 // 아티스트 정보 
 Map<String, Object> artistInfo = new HashMap<>();
@@ -73,52 +75,83 @@ musicInfo.put("time", 217);
 musicInfo.put("composer", "아이유,이종훈,이채규");
 musicInfo.put("lyricist", "아이유");
 musicList.add(musicInfo);
+// 상세 곡 정보를 보여줄 target Map 세팅
+Map<String, Object> target = null;
 %>
+
 <section>
-	<div>
-		<div class="border border-success p-3 d-flex">
+
+	<%
+	// 예외처리해줘야 한다!! 확인해보기
+	%>
+	<h2>곡 정보</h2>
+	<div class="border border-success p-3">
+		<%
+		// 1. 목록에서 클릭해서 들어온 경우 <a> 태그 - id값
+		if (request.getParameter("id") != null) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			//out.print("################id " + id);
+
+			for (Map<String, Object> map : musicList) {
+				// id로 넘어오거나 검색으로 넘어오기 때문에 null체크를 꼭 해줘야 한다.
+				if ((int) map.get("id") == id) {
+			target = map;
+			break;
+				}
+			}
+		}
+
+		// 2. search 검색어로 유입되는 경우
+		if (request.getParameter("search") != null) {
+			String search = request.getParameter("search");
+			//out.print("######## search: " + search);
+			for (Map<String, Object> map : musicList) {
+				String title = (String) map.get("title");
+				if (title.equals("search"))
+			;
+				target = map;
+				break;
+			}
+		}
+		%>
+
+		<!-- 상자마다 각각의 시멘틱(이름) 넣어주는 게 좋다. -->
+		<div class="album-cover d-flex">
 			<div class="mr-3">
-				<img src="<%=artistInfo.get("photo")%>" width=150px>
+				<img src="<%=target.get("thumbnail")%>" width=150 height=150>
 			</div>
-			<div>
-				<h3>
-					<b><%=artistInfo.get("name")%></b>
-				</h3>
-				<span class="d-block"><%=artistInfo.get("agency")%></span> <span
-					class="d-block"><%=artistInfo.get("debute")%>데뷔</span>
+
+			<div class="album-info">
+				<h1><%=target.get("title")%></h1>
+				<span class="text-success font-weight-bold d-block mb-3"><%=target.get("singer")%></span>
+				<div class="music-info-text d-flex">
+					<div class="text-dark mr-4">
+						앨범<br>재생시간<br>작곡가<br>작사가<br>
+					</div>
+					<div>
+						<%=target.get("album")%><br>
+						<%=(int) target.get("time") / 60%>:<%=(int) target.get("time") % 60%><br>
+						<%=target.get("composer")%><br>
+						<%=target.get("lyricist")%>
+					</div>
+
+					<%-- <span class="text-secondary d-block"><span class="mr-5">앨범</span><%=map.get("album")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">재생시간</span><%=map.get("time")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작곡가</span><%=map.get("composer")%></span>
+				<span class="text-secondary d-block"><span class="mr-5">작사가</span><%=map.get("lyricist")%></span> --%>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="bg-white">
-		<h2 class="mt-4">곡 목록</h2>
 
-		<table class="table text-center font-weight-bold">
-			<thead>
-				<tr>
-					<th>no</th>
-					<th>제목</th>
-					<th>앨범</th>
-				</tr>
-			</thead>
-			<tbody>
 
-				<%
-				for (Map<String, Object> map : musicList) {
-				%>
 
-				<tr>
-					<td><%=map.get("id")%></td>
-					<!-- 나중에 많아지면 제목이 겹칠수 있기 때문에 정확하게 하려면 고유id로 해주는게 좋다. -->
-					<td><a href="/lesson03/quiz02/detail_template.jsp?id=<%=map.get("id")%>"><%=map.get("title")%></a></td>
-					<td><%=map.get("album")%></td>
-				</tr>
-
-				<%
-				}
-				%>
-
-			</tbody>
-		</table>
 
 	</div>
+
+
+	<h4 class="mt-4">가사</h4>
+	<hr>
+	<div>가사 정보 없음</div>
+
+
 </section>

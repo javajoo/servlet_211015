@@ -28,36 +28,33 @@ header {
 	height: 100px;
 	font-size: 50px;
 }
-
 a:hover {
 	text-decoration: none;
 }
-
 nav {
 	height: 70px;
 }
-
 .font-link {
 	color: black;
 	font-weight: bold;
 	font-size: 20px;
 }
-
+.music-info-text {fone-size : 10px; color :gray;}
 footer {
 	height: 100px;
 }
 </style>
 </head>
 <body>
-	<!-- 검색, 클릭으로 페이지 넘어갈 수 있도록 2가지 방법으로 만들어줘야 한다. -->
-	<div id="wrap">
-		<jsp:include page="header.jsp" />
-		<jsp:include page="nav.jsp" />
-		<jsp:include page="list_content.jsp" />
-		<jsp:include page="footer.jsp" />
 
+	<div id="wrap">
+		<form method="get" action="/lesson03/quiz02/detail_template.jsp">
+			<jsp:include page="header.jsp" />
+		</form>
+		<jsp:include page="nav.jsp" />
+		<jsp:include page="detail_content.jsp" />
+		<!-- 상세페이지만 달라지고 나머지는 똑같다. -->
+		<jsp:include page="footer.jsp" />
 	</div>
 </body>
 </html>
-
-
