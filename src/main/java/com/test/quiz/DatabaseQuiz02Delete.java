@@ -10,32 +10,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.test.common.MysqlService;
 
-@WebServlet("/db/quiz02_insert")
-public class DatabaseQuiz02Insert extends HttpServlet{
+@WebServlet("/db/quiz02_delete")
+public class DatabaseQuiz02Delete extends HttpServlet {
 
 	@Override
-	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String name = request.getParameter("name");
-		String url = request.getParameter("url");
-		
-		// db 연결
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
 		MysqlService mysql = MysqlService.getInstance();
 		mysql.connection();
-		
-		// 1. 테이블 생성 
+		int id = Integer.parseInt(request.getParameter("id"));
 
-		
-		// 2. 데이터 저장
-		String insertQuery = "insert into `site` (`name`,`url`)" + 
-							"values('" + name +"','" +url +"')";
-		
+		String deleteQuery = "delete from `site` where `id`=" + id;
+
 		try {
-			mysql.update(insertQuery);
+			mysql.update(deleteQuery);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		// db 해제
+
 		mysql.disconnection();
 		
 		// 리다이렉트

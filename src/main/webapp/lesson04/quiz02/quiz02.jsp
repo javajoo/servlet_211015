@@ -22,22 +22,21 @@
    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
    crossorigin="anonymous"></script>
- <style>
- .input1 {width: 200px;}
- .input2 {width: 400px;}
- </style>
+<style>
+.name {width: 200px;}
+.url {width: 400px;}
+</style>
 </head>
 <body>
+<form method="get" action="/db/quiz02_insert">
 	<h1>즐겨찾기 추가</h1>
-	사이트명:<br>
-	<input type="text" class="input1 form-control" name="name">
-	사이트주소:<br>
-	<input type="text" class="input2 form-control" name="address">
-	<br>
+	<b>사이트명:</b><br>
+	<input type="text" name="name" class="name form-control"><br>
+	<b>사이트주소:</b><br>
+	<input type="text" name="url" class="url form-control"><br>
 	<input type="submit" class="btn btn-success" value="추가">
 	
+</form>
+
 </body>
 </html>
-
-
-
