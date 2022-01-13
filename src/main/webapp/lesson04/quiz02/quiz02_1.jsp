@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>즐겨찾기 목록</title>
 <!-- bootstrap  -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -34,35 +34,36 @@
 	String query = "select * from `site` order by `id` desc";
 	ResultSet result = mysql.select(query);
 	%>
+	<div class="container">
+		<h1>즐겨찾기 목록</h1>
+		<table class="table border=1 text-center">
+			<thead>
+				<tr>
+					<th>사이트</th>
+					<th>사이트 주소</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody>
 
-	<table class="table border=1 text-center">
-		<thead>
-			<tr>
-				<th>사이트</th>
-				<th>사이트 주소</th>
-				<th>삭제</th>
-			</tr>
-		</thead>
-		<tbody>
+				<%
+				while (result.next()) {
+				%>
 
-			<%
-			while (result.next()) {
-			%>
+				<tr>
+					<td><%=result.getString("name")%></td>
+					<!-- target="_blank" 새로운 페이지로 넘어가게 한다. -->
+					<td><a href="<%=result.getString("url")%>" target="_blank"><%=result.getString("url")%></a></td>
+					<td><a href="/db/quiz02_delete?id=<%=result.getInt("id")%>" class="btn btn-danger">삭제</a></td>
+				</tr>
 
-			<tr>
-				<td><%=result.getString("name")%></td>
-				<td><a href="<%=result.getString("url")%>"><%=result.getString("url")%></a></td>
-				<td><a
-					href="/db/quiz02_delete?id=<%=result.getString("id")%>">삭제</a></td>
-			</tr>
+				<%
+				}
+				%>
 
-			<%
-			}
-			%>
-
-		</tbody>
-	</table>
-
+			</tbody>
+		</table>
+	</div>
 
 	<%
 	// db 해제

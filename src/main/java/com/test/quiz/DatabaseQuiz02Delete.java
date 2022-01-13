@@ -15,11 +15,15 @@ public class DatabaseQuiz02Delete extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+		// request 파라미터 꺼낸다.
+	
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		// db 연결
 		MysqlService mysql = MysqlService.getInstance();
 		mysql.connection();
-		int id = Integer.parseInt(request.getParameter("id"));
 
+		// delete 쿼리
 		String deleteQuery = "delete from `site` where `id`=" + id;
 
 		try {
@@ -28,6 +32,7 @@ public class DatabaseQuiz02Delete extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		// db 연결 해제
 		mysql.disconnection();
 		
 		// 리다이렉트
